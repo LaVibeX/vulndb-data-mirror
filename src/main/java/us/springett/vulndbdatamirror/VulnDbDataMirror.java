@@ -114,7 +114,7 @@ public class VulnDbDataMirror {
                 final int hours = Integer.parseInt(line.getOptionValue("mirror-update"));
                 mirror.mirrorUpdatedVulnerabilities(hours);
             }
-            if (!(line.hasOption("mirror-vendors") && line.hasOption("mirror-products") && line.hasOption("mirror-vulnerabilities"))) {
+            if (!(line.hasOption("mirror-vendors") || line.hasOption("mirror-products") || line.hasOption("mirror-vulnerabilities"))) {
                 System.out.println("A feed to mirror was not specified. Defaulting to mirror all feeds.");
                 mirror.mirrorVendors();
                 mirror.mirrorProducts();
